@@ -545,6 +545,19 @@ body.theme-light .contact-copy p {
   object-fit: cover;
 }
 
+/* Street photography treatment: desaturated, higher contrast, subtle vignette */
+.portfolio-card[data-category="street"] img,
+.portfolio-card img.street-photo {
+  filter: grayscale(100%) contrast(1.08) brightness(0.98);
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+.portfolio-card[data-category="street"]:hover img,
+.portfolio-card img.street-photo:hover {
+  filter: grayscale(0%) contrast(1.03) saturate(1.05);
+  transform: scale(1.02);
+}
+
 .portfolio-details {
   padding: 22px 24px 26px;
 }
